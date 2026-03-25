@@ -62,10 +62,8 @@ function update(tabMsgs) {
 
 function getServerUrl() {
   var val = $("#server-url").val().replace(/\/$/, "");
-  // Si vide ou localhost, on utilise l'origine de la page (même serveur)
-  if (!val || val === "http://localhost:3000") {
-    return window.location.origin;
-  }
+  // Si vide, on utilise l'origine de la page (même serveur)
+  if (!val) return window.location.origin;
   return val;
 }
 
