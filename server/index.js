@@ -1,11 +1,15 @@
 const express = require('express');
 const cors    = require('cors');
+const path    = require('path');
 
 const app  = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-// Autorise les requêtes cross-origin (nécessaire pour le client HTML)
+// Autorise les requêtes cross-origin
 app.use(cors());
+
+// Sert les fichiers statiques du client (index.html, style.css, script.js)
+app.use(express.static(path.join(__dirname, '../client')));
 
 /* ============================================================
    Section 2.2 — Route /test/*
