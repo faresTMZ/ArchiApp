@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Board</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Message Board</h1>
+    <button id="theme-toggle">Mode sombre</button>
+  </header>
+
+  <main>
+    <section id="config-section">
+      <label for="server-url">Adresse du micro-service :</label>
+      <input type="text" id="server-url" value="http://localhost:3000" placeholder="http://localhost:3000">
+      <button id="btn-refresh">Mettre à jour</button>
+    </section>
+
+    <section id="messages-section">
+      <h2>Messages</h2>
+      <ul id="message-list">
+        <!-- Messages chargés dynamiquement -->
+      </ul>
+    </section>
+
+    <section id="post-section">
+      <h2>Poster un message</h2>
+      <label for="pseudo-input">Pseudo :</label>
+      <input type="text" id="pseudo-input" placeholder="Votre pseudo">
+      <label for="message-input">Message :</label>
+      <textarea id="message-input" placeholder="Écrivez votre message ici..."></textarea>
+      <button id="btn-send">Envoyer</button>
+    </section>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
